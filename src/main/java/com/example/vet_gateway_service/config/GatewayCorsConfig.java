@@ -23,7 +23,7 @@ public class GatewayCorsConfig {
         // --- REGLAS DE ACCESO ---
         
         // Permite los orígenes de tu frontend
-        config.setAllowedOrigins(Arrays.asList("http://localhost:5173", "http://localhost:3000"));
+        config.setAllowedOrigins(Arrays.asList("*"));
         
         // Métodos permitidos (POST, GET, OPTIONS, etc.)
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
