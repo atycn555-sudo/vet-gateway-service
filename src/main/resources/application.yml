@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 logging:
   level:
@@ -60,6 +60,6 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: https://vet-discovery-service-7i52.onrender.com/eureka/
     register-with-eureka: true
     fetch-registry: true
