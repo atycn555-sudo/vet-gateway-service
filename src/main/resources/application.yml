@@ -21,10 +21,6 @@ spring:
 
       routes:
 
-        # =========================================================
-        # RUTA 1: USERS SERVICE (Login y Registro)
-        # QUITAMOS /v1 antes de mandarlo al microservicio
-        # =========================================================
         - id: users-service
           uri: lb://VET-USERS-SERVICE
           predicates:
@@ -32,10 +28,6 @@ spring:
           filters:
             - RewritePath=/api/v1/(?<remaining>.*), /api/${remaining}
 
-        # =========================================================
-        # RUTA 2: CLINIC SERVICE (Clientes, Mascotas...)
-        # ESTA SE PASA COMPLETA SIN MODIFICAR (sin rewrite)
-        # =========================================================
         - id: clinic-service
           uri: lb://VET-CLINIC-SERVICE
           predicates:
@@ -49,9 +41,6 @@ spring:
                    /api/v1/products/**,
                    /api/v1/suppliers/**
 
-        # =========================================================
-        # RUTA 3: CATALOG SERVICE (GraphQL)
-        # =========================================================
         - id: catalog-service
           uri: lb://VET-CATALOG-SERVICE
           predicates:
